@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JobSignal: know before you apply</title>
+    <meta name="description" content="Paste a job link. JobSignal checks whether the listing is live on the employer's own job board, how long it's been up, and what public records say about the company." />
+    <meta property="og:title" content="JobSignal: know before you apply" />
+    <meta property="og:description" content="Check a job posting and the company behind it before you spend an evening on the application." />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#121311" />
+    <script>
+      try { var t = localStorage.getItem('js-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>JobSignal needs JavaScript to run the analysis. Everything else is plain old web pages, promise.</noscript>
+    <script type="module" src="/src/client/main.tsx"></script>
+  </body>
+</html>

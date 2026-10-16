@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: Newsreader; src: url('../node_modules/@fontsource/newsreader/files/newsreader-latin-400-normal.woff2'); }
+  @font-face { font-family: Newsreader; font-style: italic; src: url('../node_modules/@fontsource/newsreader/files/newsreader-latin-400-italic.woff2'); }
+  @font-face { font-family: Plex; src: url('../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2'); }
+  @font-face { font-family: Caveat; src: url('../node_modules/@fontsource/caveat/files/caveat-latin-500-normal.woff2'); }
+  html, body { margin: 0; }
+  body { width: 1200px; height: 630px; background: #121311; color: #ebe9e1; font-family: Newsreader, Georgia, serif; position: relative; overflow: hidden; }
+  .rule { position: absolute; left: 64px; right: 64px; height: 1px; background: rgba(235,233,225,.06); }
+  .mono { font-family: Plex, monospace; font-size: 20px; letter-spacing: .1em; color: #a19e93; text-transform: uppercase; }
+  h1 { font-weight: 400; font-size: 92px; line-height: 1.02; margin: 0; letter-spacing: -.015em; }
+  em { font-style: italic; position: relative; }
+  .stamp { display: inline-block; font-family: Plex, monospace; font-size: 22px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 14px 6px; border: 2.5px solid currentColor; border-radius: 5px; box-shadow: inset 0 0 0 3px #121311, inset 0 0 0 4.5px currentColor; transform: rotate(-1.6deg); margin-right: 18px; }
+  .hand { font-family: Caveat, cursive; font-size: 40px; color: #5fb48d; }
+</style>
+</head>
+<body>
+  <div class="rule" style="top:150px"></div><div class="rule" style="top:420px"></div><div class="rule" style="top:540px"></div>
+  <div style="position:absolute;left:64px;top:56px;display:flex;align-items:center;gap:16px">
+    <svg width="44" height="44" viewBox="0 0 28 28" fill="none"><rect x="1.5" y="1.5" width="25" height="25" rx="6" stroke="#ebe9e1" stroke-width="1.6"/><path d="M6 17.5h3.2l2.2-7.3 3.1 11 2.6-7.4 1.4 3.7H22" stroke="#5fb48d" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span style="font-size:40px">JobSignal</span>
+  </div>
+  <div style="position:absolute;left:64px;top:178px">
+    <h1>Know before<br>you <em>apply.<svg style="position:absolute;left:0;bottom:-6px;width:100%;height:16px;overflow:visible" viewBox="0 0 300 12" preserveAspectRatio="none"><path d="M3 8.5c38-3.1 79-5.4 121-5.6 42-.3 88 1.6 130 2.4 14 .2 29 .6 42 .9" fill="none" stroke="#5fb48d" stroke-width="3" stroke-linecap="round"/></svg></em></h1>
+  </div>
+  <div style="position:absolute;left:64px;top:452px">
+    <span class="stamp" style="color:#6cc29a">Live on their job board</span>
+    <span class="stamp" style="color:#dcae55">Open 165 days</span>
+    <span class="stamp" style="color:#e07b62">WARN notice filed</span>
+  </div>
+  <div style="position:absolute;left:64px;top:560px" class="mono">Job posting checks · layoff notices · SEC filings</div>
+  <div style="position:absolute;right:64px;top:300px;transform:rotate(-3deg)" class="hand">paste a link,<br>&nbsp;&nbsp;get the facts</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jobsignal",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+
+  // The React app is served as static assets. A few paths go to the Worker first
+  // so it can inject per-page metadata (share previews, company pages, sitemap).
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/r/*", "/companies/*", "/sitemap.xml", "/robots.txt"]
+  },
+
+  // Create the real database with:  npx wrangler d1 create jobsignal
+  // then paste the id it prints below. Local dev works without changing this.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "jobsignal",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // Every 6 hours: recheck watched jobs, pull new WARN notices, send reminders.
+  // Mondays 14:00 UTC: weekly digest emails.
+  "triggers": { "crons": ["15 */6 * * *", "0 14 * * 1"] },
+
+  // Non-secret settings. Secrets (Stripe, Resend, session pepper) go in
+  // .dev.vars locally and `wrangler secret put` in production. See SETUP_GUIDE.md.
+  "vars": {
+    "APP_ENV": "development",
+    "APP_URL": "http://localhost:5173",
+    "BILLING_MODE": "dev",
+    "EMAIL_MODE": "console",
+    "SEC_USER_AGENT": "JobSignal (set SEC_USER_AGENT to a real contact email)",
+    "EMAIL_FROM": "JobSignal <hello@example.com>"
+  }
+}

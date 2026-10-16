@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tests.tsbuildinfo",
+    "lib": ["ES2023", "DOM"],
+    "types": ["node", "./src/worker/worker-configuration.d.ts"],
+    "noUnusedLocals": false
+  },
+  "include": ["tests", "src/worker", "src/shared"]
+}

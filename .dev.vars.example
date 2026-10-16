@@ -1,0 +1,19 @@
+# Copy to .dev.vars for local development. Never commit .dev.vars.
+
+# Random string used to hash IPs and sign things. Generate one with:
+#   node -e "console.log(crypto.randomUUID()+crypto.randomUUID())"
+SESSION_PEPPER=change-me-to-a-long-random-string
+
+# Comma-separated emails that get the admin role when they sign in.
+ADMIN_EMAILS=you@example.com
+
+# Optional in dev. Needed when EMAIL_MODE=resend.
+RESEND_API_KEY=
+
+# Optional in dev. Needed when BILLING_MODE=stripe.
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+STRIPE_PRICE_PRO_MONTHLY=
+
+# Optional. If set, anonymous analyses must pass a Cloudflare Turnstile check.
+TURNSTILE_SECRET_KEY=
